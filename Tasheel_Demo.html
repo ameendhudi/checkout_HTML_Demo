@@ -1,13 +1,11 @@
 <html lang="en">
-
 <head>
   <base href="/">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- <script type="text/javascript" src="https://customer.tasheelfinance.com/merchants/tasheel-kit.js"></script> -->
-  <script type="text/javascript" src="https://wireframemobile-uat.procco.net/tasheel-kit.js"></script>
+  <script type="text/javascript" src="https://customer.tasheelfinance.com/merchants/tasheel-kit.js"></script>
   <title>Test</title>
 </head>
 
@@ -15,18 +13,15 @@
 
   <button onclick="myFunction()">Click me</button>
   <br> <br>
-  <tasheel-checkout language="en" is-debug="true" merchant-id="37d7168a-b709-491e-817f-908e52460a1d" id="test01">
-  </tasheel-checkout>
-  <br> <br>
-  <tasheel-checkout language="ar" display="false"  merchant-id="1f6357f2-9ad0-4d14-b506-a924a3a8809e"
+  <tasheel-checkout language="ar" is-debug="true" display="false" merchant-id="1f6357f2-9ad0-4d14-b506-a924a3a8809e"
     id="test02">
   </tasheel-checkout>
-  <!-- <iframe src="https://wireframeweb-uat.procco.net/merchanthost" height="900" width="1000" ></iframe> -->
 </body>
 
 <script>
   const objectOnjfig = {
     language: "en", // langiuage
+    // isDebug: true,
     paymentMethodChanged: function (ev) {
       console.log('Function called from HTML page');
     },
@@ -37,9 +32,6 @@
   };
   function myFunction() {
     let el = document.getElementById("test02");
-
-   //  el.isDebug = true;
-    // el.language = "ar";
     el.initSetup(objectOnjfig);
     el.Show();
   }
